@@ -1,0 +1,19 @@
+{
+  "name": "connect.gateway",
+  "version": "1.0.0",
+  "description": "Connect Gateway — WSS relay between phones and the Recorder Service",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "discountcharacter",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.18.0"
+  }
+}
