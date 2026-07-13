@@ -78,3 +78,18 @@ export async function recorderHealthCheck() {
     return false;
   }
 }
+
+/**
+ * GET /internal/recorder/pair?code=XXXX
+ * Device polls this to get its api_key after admin binds the code.
+ */
+export async function recorderPair(code) {
+  const res = await fetch(`${BASE()}/internal/recorder/pair?code=${encodeURIComponent(code)}`);
+  const body = await res.json();
+  if (!res.ok) {
+    const err = new Error(body.error || 'Pair failed');
+    err.status = res.status;
+    throw err;
+  }
+  return body;
+}
